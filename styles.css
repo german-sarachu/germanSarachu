@@ -3,13 +3,14 @@
   max-height: 70px;
   transition: 0.4s;
 }
+
 .header-logo:hover {
   transform: scale(1.1);
 }
 
 /*navbar*/
 .lista li:hover {
-  background-color: rgb(255 221 21);
+  background-color: rgb(255, 221, 21);
   border-radius: 20px;
   box-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
 }
@@ -17,11 +18,14 @@
 /*carousel*/
 .carousel-inner img {
   height: 65vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .carousel-item {
   position: relative;
 }
+
 .carousel-parrafo {
   position: absolute;
   color: #fff;
@@ -42,23 +46,30 @@
   padding: 20px;
   margin-top: 50px;
 }
+
 .contenedor-galeria img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .contenedor-galeria img:nth-child(1) {
   grid-row-start: span 2;
 }
+
 .contenedor-galeria img:nth-child(2) {
   grid-column-start: span 2;
 }
+
 .contenedor-galeria img:nth-child(6) {
   grid-row-start: span 2;
 }
+
 .contenedor-galeria img:nth-child(8) {
   grid-column-start: span 2;
 }
+
 .contenedor-galeria img:nth-child(11) {
   grid-column-start: span 2;
 }
@@ -69,7 +80,6 @@
     flex-direction: column;
   }
 }
-
 @media (max-width: 768px) {
   .contenedor-galeria {
     grid-template-columns: repeat(2, 1fr);
@@ -85,7 +95,6 @@
     display: none;
   }
 }
-
 @media (max-width: 1024px) {
   .contenedor-galeria {
     grid-template-columns: repeat(3, 1fr);
@@ -94,7 +103,6 @@
     grid-row-start: span 1;
   }
 }
-
 /*footer*/
 .sociales-footer i:hover {
   text-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
@@ -106,6 +114,7 @@
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
+
 .aside-nosotros span {
   color: grey;
 }
@@ -118,14 +127,17 @@
   background-position: center;
   padding: 40px 20px;
 }
+
 .input-formulario {
-  background-color: rgba(255, 255, 255, 0, 8);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   border: none;
 }
+
 .form-parrafo {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
+
 .btn-formulario:hover {
   box-shadow: 0 0 20px #ddd000;
 }
@@ -143,12 +155,14 @@
   min-height: 50vh;
   flex-wrap: wrap;
 }
+
 .carta {
   position: relative;
   width: 300px;
   height: 350px;
   margin: 20px 15px;
 }
+
 .carta .cara {
   position: absolute;
   width: 100%;
@@ -158,16 +172,20 @@
   overflow: hidden;
   transition: 0.5s;
 }
+
 .carta .adelante {
   transform: perspective(600px) rotateY(0deg);
   box-shadow: 0 5px 10px #000;
 }
+
 .carta .adelante img {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .carta .adelante h1 {
   position: absolute;
   font-size: 1.6rem;
@@ -176,6 +194,7 @@
   right: 20px;
   top: 15px;
 }
+
 .carta .adelante .logo {
   position: relative;
   width: 40%;
@@ -183,6 +202,7 @@
   left: 25px;
   top: 20px;
 }
+
 .carta .adelante h3 {
   position: absolute;
   bottom: 0;
@@ -193,6 +213,7 @@
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
+
 .carta .atras {
   transform: perspective(600px) rotateY(180deg);
   background: rgb(3, 35, 54);
@@ -203,6 +224,7 @@
   text-align: center;
   box-shadow: 0 5px 10px #000;
 }
+
 .carta .atras .link {
   display: flex;
   align-items: center;
@@ -211,36 +233,42 @@
   height: 50px;
   line-height: 1.8;
 }
+
 .carta .atras .link a {
   display: inline-block;
   width: 60%;
   height: 30px;
   padding: 0;
   color: #000;
-  background-color: rgb(255 221 21);
+  background-color: rgb(255, 221, 21);
   border-radius: 20px;
   box-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
   text-decoration: none;
   font-weight: bold;
 }
+
 .carta .atras .logo {
   position: relative;
   width: 40%;
   height: auto;
   margin: 0 auto;
 }
+
 .carta .atras h3 {
   font-size: 30px;
   margin-top: 20px;
   letter-spacing: 2px;
 }
+
 .carta .atras p {
   padding: 10px;
   letter-spacing: 1px;
 }
+
 .carta:hover .adelante {
   transform: perspective(600px) rotateY(180deg);
 }
+
 .carta:hover .atras {
   transform: perspective(600px) rotateY(360deg);
 }
@@ -249,6 +277,7 @@
 .contenedor-carrusel {
   width: 50%;
 }
+
 .carrusel-clientes img {
   height: 60%;
-}
+}/*# sourceMappingURL=styles.css.map */
