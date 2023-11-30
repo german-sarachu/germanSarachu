@@ -139,7 +139,7 @@
 }
 
 .btn-formulario:hover {
-  box-shadow: 0 0 20px #ddd000;
+  box-shadow: #ddd000;
 }
 
 /*mapa*/
@@ -189,7 +189,7 @@
 .carta .adelante h1 {
   position: absolute;
   font-size: 1.6rem;
-  color: white;
+  color: #fff;
   text-shadow: 0 3px 5px #000;
   right: 20px;
   top: 15px;
@@ -217,7 +217,7 @@
 .carta .atras {
   transform: perspective(600px) rotateY(180deg);
   background: rgb(3, 35, 54);
-  color: #f3f3f3;
+  color: #ececec;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -229,7 +229,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: solid 1px #f3f3f3;
+  border-top: solid 1px #ececec;
   height: 50px;
   line-height: 1.8;
 }

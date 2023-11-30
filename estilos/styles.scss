@@ -1,3 +1,14 @@
+//variables//
+$color-blanco: #fff;
+$color-claro-shadow: #ececec;
+$color-amarillo-shadow: #ddd000;
+$color-warning-bs: rgb(255 221 21);
+$color-oscuro-shadow: #141414;
+$color-negro: #000;
+$color-shadow-rgba: rgba(0, 0, 0, 0.7);
+
+$sombra: 0 0 10px $color-oscuro-shadow, 0 0 20px $color-claro-shadow, 0 0 20px $color-amarillo-shadow;
+
 /*header*/
 .header-logo {
     max-height: 70px;
@@ -9,9 +20,9 @@
   
   /*navbar*/
   .lista li:hover {
-    background-color: rgb(255 221 21);
+    background-color: $color-warning-bs;
     border-radius: 20px;
-    box-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
+    box-shadow: $sombra;
   }
   
   /*carousel*/
@@ -24,8 +35,8 @@
   }
   .carousel-parrafo {
     position: absolute;
-    color: #fff;
-    text-shadow: 0 0 8px #000;
+    color: $color-blanco;
+    text-shadow: 0 0 8px $color-negro;
     font-size: 1.2rem;
     font-weight: bold;
     bottom: 25px;
@@ -97,14 +108,14 @@
   
   /*footer*/
   .sociales-footer i:hover {
-    text-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
+    text-shadow: $sombra;
   }
   
   /*seccion nosotros*/
   .seccion-nosotros img,
   .aside-nosotros img {
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px $color-shadow-rgba;
   }
   .aside-nosotros span {
     color: grey;
@@ -120,19 +131,19 @@
   }
   .input-formulario {
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px $color-shadow-rgba;
     border: none;
   }
   .form-parrafo {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px $color-shadow-rgba;
   }
   .btn-formulario:hover {
-    box-shadow: 0 0 20px #ddd000;
+    box-shadow: $color-amarillo-shadow;
   }
   
   /*mapa*/
   .mapa {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px $color-shadow-rgba;
   }
   
   /*seccion cartas*/
@@ -160,7 +171,7 @@
   }
   .carta .adelante {
     transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
+    box-shadow: 0 5px 10px $color-negro;
   }
   .carta .adelante img {
     position: absolute;
@@ -171,8 +182,8 @@
   .carta .adelante h1 {
     position: absolute;
     font-size: 1.6rem;
-    color: white;
-    text-shadow: 0 3px 5px #000;
+    color: $color-blanco;
+    text-shadow: 0 3px 5px $color-negro;
     right: 20px;
     top: 15px;
   }
@@ -189,25 +200,25 @@
     width: 100%;
     height: 45px;
     line-height: 45px;
-    color: #fff;
+    color: $color-blanco;
     background: rgba(0, 0, 0, 0.4);
     text-align: center;
   }
   .carta .atras {
     transform: perspective(600px) rotateY(180deg);
     background: rgb(3, 35, 54);
-    color: #f3f3f3;
+    color: $color-claro-shadow;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    box-shadow: 0 5px 10px #000;
+    box-shadow: 0 5px 10px $color-negro;
   }
   .carta .atras .link {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: solid 1px #f3f3f3;
+    border-top: solid 1px $color-claro-shadow;
     height: 50px;
     line-height: 1.8;
   }
@@ -216,10 +227,10 @@
     width: 60%;
     height: 30px;
     padding: 0;
-    color: #000;
-    background-color: rgb(255 221 21);
+    color: $color-negro;
+    background-color: $color-warning-bs;
     border-radius: 20px;
-    box-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
+    box-shadow: $sombra;
     text-decoration: none;
     font-weight: bold;
   }
