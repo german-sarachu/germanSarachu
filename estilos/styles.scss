@@ -1,12 +1,12 @@
 //variables//
 $color-blanco: #fff;
+$color-warning-bs: rgb(255 221 21);
+$color-negro: #000;
 $color-claro-shadow: #ececec;
 $color-amarillo-shadow: #ddd000;
-$color-warning-bs: rgb(255 221 21);
 $color-oscuro-shadow: #141414;
-$color-negro: #000;
-$color-shadow-rgba: rgba(0, 0, 0, 0.7);
 
+$shadow-rgba: 0 4px 8px rgba(0, 0, 0, 0.7);
 $sombra: 0 0 10px $color-oscuro-shadow, 0 0 20px $color-claro-shadow, 0 0 20px $color-amarillo-shadow;
 $span: span 2;
 
@@ -102,9 +102,6 @@ $portatil: 1024px;
     .contenedor-galeria img:nth-child(1) {
       @include filasSpan (span 1);
     }
-    .contenedor-galeria img:nth-child(1) {
-      @include filasSpan (span 1);
-    }
     .contenedor-galeria img:nth-child(1),
     .contenedor-galeria img:nth-child(6) {
       display: none;
@@ -129,7 +126,7 @@ $portatil: 1024px;
   .seccion-nosotros img,
   .aside-nosotros img {
     width: 80%;
-    box-shadow: 0 4px 8px $color-shadow-rgba;
+    box-shadow: $shadow-rgba;
   }
   .aside-nosotros span {
     color: grey;
@@ -145,11 +142,11 @@ $portatil: 1024px;
   }
   .input-formulario {
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px $color-shadow-rgba;
+    box-shadow:$shadow-rgba;
     border: none;
   }
   .form-parrafo {
-    box-shadow: 0 4px 8px $color-shadow-rgba;
+    box-shadow: $shadow-rgba;
   }
   .btn-formulario:hover {
     box-shadow: $color-amarillo-shadow;
@@ -157,7 +154,7 @@ $portatil: 1024px;
   
   /*mapa*/
   .mapa {
-    box-shadow: 0 4px 8px $color-shadow-rgba;
+    box-shadow: $shadow-rgba;
   }
   
   /*seccion cartas*/
@@ -263,10 +260,19 @@ $portatil: 1024px;
     transform: perspective(600px) rotateY(360deg);
   }
   
-  /*carrusel*/
-  .contenedor-carrusel {
-    width: 50%;
+  /*galerias*/
+
+  .gallery-container {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+      img {
+        @include tamaños(150px, auto);
+      }
   }
-  .carrusel-clientes img {
-    height: 60%;
+
+  .button-gallery {
+    cursor: pointer;
+    /* Estilos para los botones de imagen */
   }
