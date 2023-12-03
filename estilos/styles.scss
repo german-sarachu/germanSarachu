@@ -172,25 +172,25 @@ $portatil: 1024px;
   position: relative;
   @include tamaños(300px, 350px);
   margin: 20px 15px;
+  .cara {
+    position: absolute;
+    @include tamaños(100%, 100%);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    .adelante {
+      transform: perspective(600px) rotateY(0deg);
+      box-shadow: 0 5px 10px $color-negro;
+    }
+    img {
+      position: absolute;
+      @include tamaños(100%, 100%);
+      object-fit: cover;
+    }
+  }
 }
-.carta .cara {
-  position: absolute;
-  @include tamaños(100%, 100%);
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.5s;
-}
-.carta .adelante {
-  transform: perspective(600px) rotateY(0deg);
-  box-shadow: 0 5px 10px $color-negro;
-}
-.carta .adelante img {
-  position: absolute;
-  @include tamaños(100%, 100%);
-  object-fit: cover;
-}
-.carta .adelante h1 {
+.carta .cara .adelante h1 {
   position: absolute;
   font-size: 1.6rem;
   color: $color-blanco;
@@ -281,9 +281,8 @@ input {
 .titulo-clientes::before {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 3px;
-  background-color: crimson;
+  @include tamaños(100px, 3px);
+  background-color: $color-amarillo-shadow;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -301,19 +300,18 @@ input {
   }
 }
 .top-content {
-  width: 90%;
+  @include tamaños(100%, auto);
   margin: 0 auto 20px auto;
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-.top-content .todas-imagenes {
-  color: orange;
-  font-size: bold;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 3px black;
+  .todas-imagenes {
+    color: $color-negro;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 3px $color-warning-bs;
+  }
 }
 label {
   display: inline-block;
@@ -328,10 +326,10 @@ label {
   transition: color 0.5s;
   border-radius: 5px;
   box-shadow: 3px 3px 5px lightgray;
-}
-label img {
-  background-size: cover;
-  height: 80%;
+  img {
+    background-size: cover;
+    height: 80%;
+  }
 }
 .photo-gallery {
   width: 90%;
@@ -340,7 +338,7 @@ label img {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
-@media (max-width: 992px) {
+@media (max-width: $portatil) {
   .photo-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -357,13 +355,12 @@ label img {
   box-shadow: 3px 3px 5px lightgray;
   cursor: pointer;
   transition: 0.5s;
-}
-.pic img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transition: 0.5s;
-  object-fit: cover;
+  img {
+    @include tamaños(100%, 100%);
+    border-radius: 10px;
+    transition: 0.5s;
+    object-fit: cover;
+  }
 }
 .pic::before {
   content: "Martín Bianchi Suelos";
@@ -382,8 +379,7 @@ label img {
 .pic:after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 0;
+  @include tamaños(100%, 0);
   bottom: 0;
   left: 0;
   border-radius: 10px;
