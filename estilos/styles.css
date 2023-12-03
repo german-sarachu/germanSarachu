@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*header*/
 .header-logo {
   max-height: 70px;
@@ -271,18 +272,217 @@
 }
 
 /*galerias*/
-.gallery-container {
+input {
   display: none;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.gallery-container img {
-  width: 150px;
-  height: auto;
 }
 
-.button-gallery {
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.titulo-clientes {
+  position: relative;
+  margin: 40px 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.titulo-clientes::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: crimson;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 100px;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+.top-content {
+  width: 90%;
+  margin: 0 auto 20px auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.top-content .todas-imagenes {
+  color: orange;
+  font-size: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 3px black;
+}
+
+label {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin: 10px 15px;
+  padding: 0 15px;
+  color: gray;
   cursor: pointer;
-  /* Estilos para los botones de imagen */
+  transition: color 0.5s;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px lightgray;
+}
+
+label img {
+  background-size: cover;
+  height: 80%;
+}
+
+.photo-gallery {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+.pic {
+  position: relative;
+  height: 230px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px lightgray;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: 0.5s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pic::before {
+  content: "Martín Bianchi Suelos";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+  z-index: 10;
+}
+
+.pic:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.pic:hover::after {
+  height: 100%;
+}
+
+.pic:hover::before {
+  margin-top: 0;
+  opacity: 1;
+}
+
+#check1:checked ~ .container .photo-gallery .pic {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+  transition: 0.5s;
+}
+
+#check2:checked ~ .container .photo-gallery .family {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+}
+
+#check2:checked ~ .container .photo-gallery .child,
+#check2:checked ~ .container .photo-gallery .place,
+#check2:checked ~ .container .photo-gallery .imc {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  transition: 0s;
+}
+
+#check3:checked ~ .container .photo-gallery .child {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+}
+
+#check3:checked ~ .container .photo-gallery .family,
+#check3:checked ~ .container .photo-gallery .place,
+#check3:checked ~ .container .photo-gallery .imc {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  transition: 0s;
+}
+
+#check4:checked ~ .container .photo-gallery .place {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+}
+
+#check4:checked ~ .container .photo-gallery .family,
+#check4:checked ~ .container .photo-gallery .child,
+#check4:checked ~ .container .photo-gallery .imc {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  transition: 0s;
+}
+
+#check5:checked ~ .container .photo-gallery .imc {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+}
+
+#check5:checked ~ .container .photo-gallery .family,
+#check5:checked ~ .container .photo-gallery .child,
+#check5:checked ~ .container .photo-gallery .place {
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  transition: 0s;
 }/*# sourceMappingURL=styles.css.map */
