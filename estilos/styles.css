@@ -2,18 +2,25 @@
 /*header*/
 .header-logo {
   max-height: 70px;
-  transition: 0.4s;
+  transition: 0.8s;
 }
 
 .header-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  transition: 0.8s;
 }
 
 /*navbar*/
+.lista li {
+  border-radius: 20px;
+  transition: 0.8s;
+}
+
 .lista li:hover {
   background-color: rgb(255, 221, 21);
   border-radius: 20px;
   box-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
+  transition: 0.8s;
 }
 
 /*carousel*/
@@ -102,8 +109,13 @@
   }
 }
 /*footer*/
+.sociales-footer i {
+  transition: 0.8s;
+}
+
 .sociales-footer i:hover {
   text-shadow: 0 0 10px #141414, 0 0 20px #ececec, 0 0 20px #ddd000;
+  transition: 0.8s;
 }
 
 /*seccion nosotros*/
@@ -180,8 +192,7 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.carta .cara .adelante h1 {
+.carta .cara h2 {
   position: absolute;
   font-size: 1.6rem;
   color: #fff;
@@ -189,7 +200,6 @@
   right: 20px;
   top: 15px;
 }
-
 .carta .adelante .logo {
   position: relative;
   width: 40%;
@@ -197,7 +207,6 @@
   left: 25px;
   top: 20px;
 }
-
 .carta .adelante h3 {
   position: absolute;
   bottom: 0;
@@ -219,7 +228,6 @@
   text-align: center;
   box-shadow: 0 5px 10px #000;
 }
-
 .carta .atras .link {
   display: flex;
   align-items: center;
@@ -228,7 +236,6 @@
   height: 50px;
   line-height: 1.8;
 }
-
 .carta .atras .link a {
   display: inline-block;
   width: 60%;
@@ -241,20 +248,17 @@
   text-decoration: none;
   font-weight: bold;
 }
-
 .carta .atras .logo {
   position: relative;
   width: 40%;
   height: auto;
   margin: 0 auto;
 }
-
 .carta .atras h3 {
   font-size: 30px;
   margin-top: 20px;
   letter-spacing: 2px;
 }
-
 .carta .atras p {
   padding: 10px;
   letter-spacing: 1px;
@@ -269,7 +273,7 @@
 }
 
 /*galerias*/
-input {
+.input-clientes {
   display: none;
 }
 
@@ -324,7 +328,7 @@ input {
   text-shadow: 2px 2px 3px rgb(255, 221, 21);
 }
 
-label {
+.label-clientes {
   display: inline-block;
   display: flex;
   align-items: center;
@@ -338,7 +342,7 @@ label {
   border-radius: 5px;
   box-shadow: 3px 3px 5px lightgray;
 }
-label img {
+.label-clientes img {
   background-size: cover;
   height: 80%;
 }
@@ -479,4 +483,17 @@ label img {
   transform: scale(0);
   position: absolute;
   transition: 0s;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*
+variables
+comentarios para explicar ciertas secciones, especialmente si hay reglas CSS específicas.
+
+form e i-frame
+
+tarjetas despues de fotos clientes
+animaciones
+seo
+algun parrafo en index
+botones de tarjetas con animacion
+*//*# sourceMappingURL=styles.css.map */

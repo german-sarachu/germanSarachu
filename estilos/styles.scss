@@ -30,17 +30,23 @@ $portatil: 1024px;
 /*header*/
 .header-logo {
   max-height: 70px;
-  transition: 0.4s;
+  transition: 0.8s;
 }
 .header-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  transition: 0.8s;
 }
 
 /*navbar*/
+.lista li {
+  border-radius: 20px;
+  transition: .8s;
+}
 .lista li:hover {
   background-color: $color-warning-bs;
   border-radius: 20px;
   box-shadow: $sombra;
+  transition: .8s;
 }
 
 /*carousel*/
@@ -121,8 +127,12 @@ $portatil: 1024px;
 }
 
 /*footer*/
+.sociales-footer i{
+  transition: .8s;
+}
 .sociales-footer i:hover {
   text-shadow: $sombra;
+  transition: .8s;
 }
 
 /*seccion nosotros*/
@@ -188,30 +198,30 @@ $portatil: 1024px;
       @include tamaños(100%, 100%);
       object-fit: cover;
     }
+    h2 {
+      position: absolute;
+      font-size: 1.6rem;
+      color: $color-blanco;
+      text-shadow: 0 3px 5px $color-negro;
+      right: 20px;
+      top: 15px;
+    }
   }
-}
-.carta .cara .adelante h1 {
-  position: absolute;
-  font-size: 1.6rem;
-  color: $color-blanco;
-  text-shadow: 0 3px 5px $color-negro;
-  right: 20px;
-  top: 15px;
-}
-.carta .adelante .logo {
-  position: relative;
-  @include tamaños(40%, auto);
-  left: 25px;
-  top: 20px;
-}
-.carta .adelante h3 {
-  position: absolute;
-  bottom: 0;
-  @include tamaños(100%, 45px);
-  line-height: 45px;
-  color: $color-blanco;
-  background: rgba(0, 0, 0, 0.4);
-  text-align: center;
+  .adelante .logo {
+    position: relative;
+    @include tamaños(40%, auto);
+    left: 25px;
+    top: 20px;
+  }
+  .adelante h3 {
+    position: absolute;
+    bottom: 0;
+    @include tamaños(100%, 45px);
+    line-height: 45px;
+    color: $color-blanco;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
 }
 .carta .atras {
   transform: perspective(600px) rotateY(180deg);
@@ -222,39 +232,39 @@ $portatil: 1024px;
   justify-content: space-between;
   text-align: center;
   box-shadow: 0 5px 10px $color-negro;
-}
-.carta .atras .link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: solid 1px $color-claro-shadow;
-  height: 50px;
-  line-height: 1.8;
-}
-.carta .atras .link a {
-  display: inline-block;
-  @include tamaños(60%, 30px);
-  padding: 0;
-  color: $color-negro;
-  background-color: $color-warning-bs;
-  border-radius: 20px;
-  box-shadow: $sombra;
-  text-decoration: none;
-  font-weight: bold;
-}
-.carta .atras .logo {
-  position: relative;
-  @include tamaños(40%, auto);
-  margin: 0 auto;
-}
-.carta .atras h3 {
-  font-size: 30px;
-  margin-top: 20px;
-  letter-spacing: 2px;
-}
-.carta .atras p {
-  padding: 10px;
-  letter-spacing: 1px;
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 1px $color-claro-shadow;
+    height: 50px;
+    line-height: 1.8;
+    a {
+      display: inline-block;
+      @include tamaños(60%, 30px);
+      padding: 0;
+      color: $color-negro;
+      background-color: $color-warning-bs;
+      border-radius: 20px;
+      box-shadow: $sombra;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  .logo {
+    position: relative;
+    @include tamaños(40%, auto);
+    margin: 0 auto;
+  }
+  h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+  p {
+    padding: 10px;
+    letter-spacing: 1px;
+  }
 }
 .carta:hover .adelante {
   transform: perspective(600px) rotateY(180deg);
@@ -265,7 +275,7 @@ $portatil: 1024px;
 
 /*galerias*/
 
-input {
+.input-clientes {
   display: none;
 }
 .container {
@@ -313,7 +323,7 @@ input {
     text-shadow: 2px 2px 3px $color-warning-bs;
   }
 }
-label {
+.label-clientes {
   display: inline-block;
   display: flex;
   align-items: center;
@@ -451,3 +461,17 @@ label {
   position: absolute;
   transition: 0s;
 }
+
+
+/*
+variables
+comentarios para explicar ciertas secciones, especialmente si hay reglas CSS específicas.
+
+form e i-frame
+
+tarjetas despues de fotos clientes
+animaciones
+seo
+algun parrafo en index
+botones de tarjetas con animacion
+*/
