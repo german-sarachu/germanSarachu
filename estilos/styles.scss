@@ -26,6 +26,11 @@ $portatil: 1024px;
   width: $width;
   height: $height;
 }
+@mixin clientes($transform, $position, $opacity) {
+  transform: $transform;
+  position: $position;
+  opacity: $opacity;
+}
 
 /*header*/
 .header-logo {
@@ -40,13 +45,13 @@ $portatil: 1024px;
 /*navbar*/
 .lista li {
   border-radius: 20px;
-  transition: .8s;
+  transition: 0.8s;
 }
 .lista li:hover {
   background-color: $color-warning-bs;
   border-radius: 20px;
   box-shadow: $sombra;
-  transition: .8s;
+  transition: 0.8s;
 }
 
 /*carousel*/
@@ -96,14 +101,12 @@ $portatil: 1024px;
 .contenedor-galeria img:nth-child(11) {
   @include columnasSpan($span);
 }
-
 @media (max-width: $telefono) {
   .contenedor-galeria {
     display: flex;
     flex-direction: column;
   }
 }
-
 @media (max-width: $tablet) {
   .contenedor-galeria {
     grid-template-columns: repeat(2, 1fr);
@@ -116,7 +119,6 @@ $portatil: 1024px;
     display: none;
   }
 }
-
 @media (max-width: $portatil) {
   .contenedor-galeria {
     grid-template-columns: repeat(3, 1fr);
@@ -127,12 +129,12 @@ $portatil: 1024px;
 }
 
 /*footer*/
-.sociales-footer i{
-  transition: .8s;
+.sociales-footer i {
+  transition: 0.8s;
 }
 .sociales-footer i:hover {
   text-shadow: $sombra;
-  transition: .8s;
+  transition: 0.8s;
 }
 
 /*seccion nosotros*/
@@ -249,6 +251,7 @@ $portatil: 1024px;
       box-shadow: $sombra;
       text-decoration: none;
       font-weight: bold;
+      animation: flash 3s infinite;
     }
   }
   .logo {
@@ -273,8 +276,16 @@ $portatil: 1024px;
   transform: perspective(600px) rotateY(360deg);
 }
 
-/*galerias*/
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
 
+/*galerias*/
 .input-clientes {
   display: none;
 }
@@ -341,7 +352,7 @@ $portatil: 1024px;
     height: 80%;
   }
 }
-.photo-gallery {
+.fotos-galeria {
   width: 90%;
   margin: auto;
   display: grid;
@@ -349,12 +360,12 @@ $portatil: 1024px;
   grid-gap: 20px;
 }
 @media (max-width: $portatil) {
-  .photo-gallery {
+  .fotos-galeria {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 500px) {
-  .photo-gallery {
+  .fotos-galeria {
     grid-template-columns: 1fr;
   }
 }
@@ -374,14 +385,12 @@ $portatil: 1024px;
 }
 .pic::before {
   content: "Martín Bianchi Suelos";
-  position: absolute;
+  @include clientes(translate(-50%, -50%), absolute, 0);
   bottom: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   width: 100%;
   margin-top: 15px;
-  opacity: 0;
   transition: 0.3s;
   transition-delay: 0.2s;
   z-index: 10;
@@ -403,75 +412,49 @@ $portatil: 1024px;
   margin-top: 0;
   opacity: 1;
 }
-#check1:checked ~ .container .photo-gallery .pic {
-  opacity: 1;
-  transform: scale(1);
-  position: relative;
+#check1:checked ~ .container .fotos-galeria .pic {
+  @include clientes(scale(1), relative, 1);
   transition: 0.5s;
 }
-#check2:checked ~ .container .photo-gallery .family {
-  transform: scale(1);
-  opacity: 1;
-  position: relative;
+#check2:checked ~ .container .fotos-galeria .ute {
+  @include clientes(scale(1), relative, 1);
 }
-#check2:checked ~ .container .photo-gallery .child,
-#check2:checked ~ .container .photo-gallery .place,
-#check2:checked ~ .container .photo-gallery .imc {
-  opacity: 0;
-  transform: scale(0);
-  position: absolute;
+#check2:checked ~ .container .fotos-galeria .calcar,
+#check2:checked ~ .container .fotos-galeria .mdp,
+#check2:checked ~ .container .fotos-galeria .imc {
+  @include clientes(scale(0), absolute, 0);
   transition: 0s;
 }
-#check3:checked ~ .container .photo-gallery .child {
-  transform: scale(1);
-  opacity: 1;
-  position: relative;
+#check3:checked ~ .container .fotos-galeria .calcar {
+  @include clientes(scale(1), relative, 1);
 }
-#check3:checked ~ .container .photo-gallery .family,
-#check3:checked ~ .container .photo-gallery .place,
-#check3:checked ~ .container .photo-gallery .imc {
-  opacity: 0;
-  transform: scale(0);
-  position: absolute;
+#check3:checked ~ .container .fotos-galeria .ute,
+#check3:checked ~ .container .fotos-galeria .mdp,
+#check3:checked ~ .container .fotos-galeria .imc {
+  @include clientes(scale(0), absolute, 0);
   transition: 0s;
 }
-#check4:checked ~ .container .photo-gallery .place {
-  transform: scale(1);
-  opacity: 1;
-  position: relative;
+#check4:checked ~ .container .fotos-galeria .mdp {
+  @include clientes(scale(1), relative, 1);
 }
-#check4:checked ~ .container .photo-gallery .family,
-#check4:checked ~ .container .photo-gallery .child,
-#check4:checked ~ .container .photo-gallery .imc {
-  opacity: 0;
-  transform: scale(0);
-  position: absolute;
+#check4:checked ~ .container .fotos-galeria .ute,
+#check4:checked ~ .container .fotos-galeria .calcar,
+#check4:checked ~ .container .fotos-galeria .imc {
+  @include clientes(scale(0), absolute, 0);
   transition: 0s;
 }
-#check5:checked ~ .container .photo-gallery .imc {
-  transform: scale(1);
-  opacity: 1;
-  position: relative;
+#check5:checked ~ .container .fotos-galeria .imc {
+  @include clientes(scale(1), relative, 1);
 }
-#check5:checked ~ .container .photo-gallery .family,
-#check5:checked ~ .container .photo-gallery .child,
-#check5:checked ~ .container .photo-gallery .place {
-  opacity: 0;
-  transform: scale(0);
-  position: absolute;
+#check5:checked ~ .container .fotos-galeria .ute,
+#check5:checked ~ .container .fotos-galeria .calcar,
+#check5:checked ~ .container .fotos-galeria .mdp {
+  @include clientes(scale(0), absolute, 0);
   transition: 0s;
 }
 
-
-/*
-variables
-comentarios para explicar ciertas secciones, especialmente si hay reglas CSS específicas.
-
-form e i-frame
-
-tarjetas despues de fotos clientes
+/*seo
 animaciones
-seo
 algun parrafo en index
-botones de tarjetas con animacion
+tarjetas despues de fotos clientes
 */
